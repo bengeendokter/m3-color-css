@@ -3,6 +3,8 @@
   grid-auto-flow: column;
   gap: 0;
   justify-content: start;
+  border: 2px dotted black;
+  width: fit-content;
 }
 
 .value {
