@@ -1,1 +1,2 @@
-/* You can add global styles to this file, and also import other style files */
+@import "m3-css-color-token-generator/theme/light";
+@import "m3-css-color-token-generator/theme/dark";

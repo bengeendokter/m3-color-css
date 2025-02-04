@@ -32,6 +32,9 @@ importers:
       '@angular/router':
         specifier: ^17.1.0
         version: 17.3.12(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@17.3.12(@angular/animations@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1)
+      m3-css-color-token-generator:
+        specifier: github:bengeendokter/m3-css-color-token-generator
+        version: https://codeload.github.com/bengeendokter/m3-css-color-token-generator/tar.gz/ffb92657e3ce61b1b679b6ac473922ade596ecde
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -1124,6 +1127,9 @@ packages:
   '@ljharb/through@2.3.13':
     resolution: {integrity: sha512-/gKJun8NNiWGZJkGzI/Ragc53cOdcLNdzjLaIa+GEjguQs0ulsurx8WN0jijdK9yPqDvziX995sMRLyLt1uZMQ==}
     engines: {node: '>= 0.4'}
+
+  '@material/material-color-utilities@0.2.7':
+    resolution: {integrity: sha512-0FCeqG6WvK4/Cc06F/xXMd/pv4FeisI0c1tUpBbfhA2n9Y8eZEv4Karjbmf2ZqQCPUWMrGp8A571tCjizxoTiQ==}
 
   '@ngtools/webpack@17.3.11':
     resolution: {integrity: sha512-SfTCbplt4y6ak5cf2IfqdoVOsnoNdh/j6Vu+wb8WWABKwZ5yfr2S/Gk6ithSKcdIZhAF8DNBOoyk1EJuf8Xkfg==}
@@ -2704,6 +2710,10 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
+
+  m3-css-color-token-generator@https://codeload.github.com/bengeendokter/m3-css-color-token-generator/tar.gz/ffb92657e3ce61b1b679b6ac473922ade596ecde:
+    resolution: {tarball: https://codeload.github.com/bengeendokter/m3-css-color-token-generator/tar.gz/ffb92657e3ce61b1b679b6ac473922ade596ecde}
+    version: 0.0.9
 
   magic-string@0.30.8:
     resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
@@ -5199,6 +5209,8 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
 
+  '@material/material-color-utilities@0.2.7': {}
+
   '@ngtools/webpack@17.3.11(@angular/compiler-cli@17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.3.3))(typescript@5.3.3)(webpack@5.94.0(esbuild@0.20.1))':
     dependencies:
       '@angular/compiler-cli': 17.3.12(@angular/compiler@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(typescript@5.3.3)
@@ -6955,6 +6967,10 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
+
+  m3-css-color-token-generator@https://codeload.github.com/bengeendokter/m3-css-color-token-generator/tar.gz/ffb92657e3ce61b1b679b6ac473922ade596ecde:
+    dependencies:
+      '@material/material-color-utilities': 0.2.7
 
   magic-string@0.30.8:
     dependencies:
