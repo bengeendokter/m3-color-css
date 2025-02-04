@@ -1,3 +1,8 @@
-<div>
-  <div class="palette">0</div>
-</div>
+@for(palette of PALETTES; track $index) {
+  <p>{{palette}}</p>
+  <div class="palette">
+    @for(value of VALUES; track $index) {
+      <div class="value" [style.--color]="'var(--md-ref-palette-' + palette + value + ')'">{{value}}</div>
+    }
+  </div>
+}
