@@ -30,6 +30,18 @@ export class AppComponent
   ngAfterViewInit()
   {
     this.setPaletteInnerHtml();
+    const themeColor = document.querySelector(`#themeColor`);
+
+    if(!themeColor)
+    {
+      console.warn(`Element with id themeColor not found!`);
+      return;
+    }
+
+    const lchThemeColor = window.getComputedStyle(themeColor).color;
+    const [l, c, h] = lchThemeColor.match(/\d+(\.\d+)?/g)!.map(Number);
+
+    themeColor.innerHTML = `Theme Color L:${l.toFixed(2).padStart(5, '0')} C:${c.toFixed(2).padStart(5, '0')} H:${h.toFixed(2).padStart(5, '0')}`;
   }
 
   private setPaletteInnerHtml()

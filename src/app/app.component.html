@@ -1,4 +1,6 @@
-<h1 [style.color]="hexThemeColor">{{hexThemeColor}}</h1>
+<h1 id="themeColor" [style.color]="'oklch(from ' + hexThemeColor + ' l c h)'">{{hexThemeColor}}</h1>
+<input type="color" id="head" name="head" value="#e66465"/>
+  <label for="head">Head</label>
 <div class="palettes">
 @for(palette of PALETTES; track $index) {
   <p>{{palette}}</p>
