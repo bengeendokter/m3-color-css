@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal, Signal, WritableSignal } from '@angular/core';
 import { setThemeFromHexColor } from 'm3-css-color-token-generator';
 
 type LchColor = `oklch(${number} ${number} ${number})`;
@@ -12,14 +12,24 @@ type LchColor = `oklch(${number} ${number} ${number})`;
 })
 export class AppComponent
 {
-  public hexThemeColor: string = '#ff0000';
+  public hexThemeColor: WritableSignal<string> =  signal('#ff0000');
   public PALETTES = ['primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant', 'error'] as const;
   public VALUES = [0, 4, 6, 10, 12, 17, 20, 22, 24, 30, 40, 50, 60, 70, 80, 87, 90, 92, 94, 95, 96, 98, 100] as const;
 
   constructor()
   {
-    setThemeFromHexColor(this.hexThemeColor);
+    setThemeFromHexColor(this.hexThemeColor());
     document.documentElement.classList.add('light');
+
+    effect(() => {
+      setThemeFromHexColor(this.hexThemeColor());
+
+      this.setPaletteInnerHtml();
+
+      setTimeout(() => {
+        this.updateThemeColorLabel();
+      }, 100);
+    });
   }
 
   private isLchColor(color: string): color is LchColor
@@ -27,16 +37,18 @@ export class AppComponent
     return color.startsWith('oklch');
   }
 
+  public handleColorChange() {
+    const colorPickerValue = this.getColorPickerValue();
+    this.hexThemeColor.set(colorPickerValue);
+  }
+
   ngAfterViewInit()
   {
     this.setPaletteInnerHtml();
-
-    console.log('colorPickerValue', this.getColorPickerValue());
-
     this.updateThemeColorLabel();
   }
 
-  private getColorPickerValue(): string {
+  public getColorPickerValue(): string {
 
     const themeColor = document.querySelector(`#themeColor`);
 
@@ -46,7 +58,9 @@ export class AppComponent
       return '';
     }
 
-    return (themeColor as HTMLInputElement).value;
+    const colorPickerValue = (themeColor as HTMLInputElement).value;
+
+    return colorPickerValue;
   }
 
   private updateThemeColorLabel() {
@@ -59,6 +73,7 @@ export class AppComponent
     }
 
     const lchThemeColor = window.getComputedStyle(themeColorLabel);
+
     const [l, c, h] = lchThemeColor.color.match(/\d+(\.\d+)?/g)!.map(Number);
 
     themeColorLabel.innerHTML = `Theme Color L:${l.toFixed(2).padStart(5, '0')} C:${c.toFixed(2).padStart(5, '0')} H:${h.toFixed(2).padStart(5, '0')}`;

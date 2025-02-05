@@ -1,5 +1,5 @@
-<h1 id="themeColorLabel" [style.color]="'oklch(from ' + hexThemeColor + ' l c h)'">{{hexThemeColor}}</h1>
-<input type="color" id="themeColor" name="themeColor" [value]="hexThemeColor"/>
+<h1 id="themeColorLabel" [style.color]="'oklch(from ' + hexThemeColor() + ' l c h)'">placeholder</h1>
+<input type="color" id="themeColor" name="themeColor" (change)="handleColorChange()" [value]="hexThemeColor()"/>
   <label for="themeColor">Head</label>
 <div class="palettes">
 @for(palette of PALETTES; track $index) {
