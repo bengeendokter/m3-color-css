@@ -1,4 +1,5 @@
 <h1 [style.color]="hexThemeColor">{{hexThemeColor}}</h1>
+<div class="palettes">
 @for(palette of PALETTES; track $index) {
   <p>{{palette}}</p>
   <div class="palette">
@@ -7,3 +8,4 @@
     }
   </div>
 }
+</div>
