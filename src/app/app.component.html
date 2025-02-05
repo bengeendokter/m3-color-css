@@ -4,7 +4,7 @@
   <p>{{palette}}</p>
   <div class="palette">
     @for(value of VALUES; track $index) {
-      <div class="value" [style.--color]="'var(--md-ref-palette-' + palette + value + ')'">{{value}}</div>
+      <div [id]="palette + value" class="value" [style.--color]="'oklch(from var(--md-ref-palette-' + palette + value + ') l c h)'">{{value}}</div>
     }
   </div>
 }
