@@ -6,7 +6,10 @@
   <p>{{palette}}</p>
   <div class="palette">
     @for(value of VALUES; track $index) {
-      <div [id]="palette + value" class="value" [style.--color]="'oklch(from var(--md-ref-palette-' + palette + value + ') l c h)'">{{value}}</div>
+      <div class="side-by-side-container">
+        <div [id]="palette + value" class="value" [style.--color]="'oklch(from var(--md-ref-palette-' + palette + value + ') l c h)'">{{value}}</div>
+        <div [style.--color]="hexThemeColor()" [style.backgroundColor]="'var(--md-ref-palette-' + palette + value + ')'" class="value css-only"></div>
+      </div>
     }
   </div>
 }

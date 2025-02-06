@@ -1,9 +1,11 @@
-.palettes {
+.palettes
+{
   display: flex;
   gap: 1rem;
 }
 
-.palette {
+.palette
+{
   display: grid;
   grid-auto-flow: row;
   gap: 0;
@@ -12,7 +14,8 @@
   width: fit-content;
 }
 
-.value {
+.value
+{
   width: 230px;
   height: 50px;
   display: flex;
@@ -21,4 +24,37 @@
   font-size: 1.2rem;
   color: color-contrast(var(--color) vs black, white);
   background-color: var(--color);
+}
+
+.side-by-side-container
+{
+  display: flex;
+}
+
+/* 0, 4, 6, 10, 12, 17, 20, 22, 24, 30, 40, 50, 60, 70, 80, 87, 90, 92, 94, 95, 96, 98, 100 */
+.css-only
+{
+  --md-ref-palette-primary0: oklch(from var(--color) 0 0 h);
+  --md-ref-palette-primary4: oklch(from var(--color) 0.17 calc(c - (c / 100) * 80) h);
+  --md-ref-palette-primary6: oklch(from var(--color) 0.20 calc(c - (c / 100) * 70) h);
+  --md-ref-palette-primary10: oklch(from var(--color) 0.24 calc(c - (c / 100) * 65) h);
+  --md-ref-palette-primary12: oklch(from var(--color) 0.25 calc(c - (c / 100) * 60) h);
+  --md-ref-palette-primary17: oklch(from var(--color) 0.30 calc(c - (c / 100) * 55) h);
+  --md-ref-palette-primary20: oklch(from var(--color) 0.33 calc(c - (c / 100) * 50) h);
+  --md-ref-palette-primary22: oklch(from var(--color) 0.35 calc(c - (c / 100) * 46) h);
+  --md-ref-palette-primary24: oklch(from var(--color) 0.36 calc(c - (c / 100) * 42) h);
+  --md-ref-palette-primary30: oklch(from var(--color) 0.42 calc(c - (c / 100) * 34) h);
+  --md-ref-palette-primary40: oklch(from var(--color) 0.51 calc(c - (c / 100) * 18) h);
+  --md-ref-palette-primary50: oklch(from var(--color) 0.60 c h);
+  --md-ref-palette-primary60: oklch(from var(--color) 0.68 calc(c - (c / 100) * 18) h);
+  --md-ref-palette-primary70: oklch(from var(--color) 0.76 calc(c - (c / 100) * 42) h);
+  --md-ref-palette-primary80: oklch(from var(--color) 0.84 calc(c - (c / 100) * 65) h);
+  --md-ref-palette-primary87: oklch(from var(--color) 0.89 calc(c - (c / 100) * 76) h);
+  --md-ref-palette-primary90: oklch(from var(--color) 0.92 calc(c - (c / 100) * 84) h);
+  --md-ref-palette-primary92: oklch(from var(--color) 0.94 calc(c - (c / 100) * 88) h);
+  --md-ref-palette-primary94: oklch(from var(--color) 0.95 calc(c - (c / 100) * 92) h);
+  --md-ref-palette-primary95: oklch(from var(--color) 0.96 calc(c - (c / 100) * 93) h);
+  --md-ref-palette-primary96: oklch(from var(--color) 0.97 calc(c - (c / 100) * 94) h);
+  --md-ref-palette-primary98: oklch(from var(--color) 0.98 calc(c - (c / 100) * 95) h);
+  --md-ref-palette-primary100: oklch(from var(--color) 1 0 h);
 }
