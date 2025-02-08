@@ -35,7 +35,14 @@
 .css-only
 {
   --md-ref-palette-primary0: oklch(from var(--color) 0 0 h);
-  --md-ref-palette-primary4: oklch(from var(--color) 0.17 calc(c - (c / 100) * 80) h);
+  --md-ref-palette-primary4: oklch(from var(--color) 0.17 calc(
+    4.23e-5 * c * c -
+    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 4) +
+    5.99e-5 * c -
+    0.0012432 * (0.075 * sin((h - 10) * pi / 180) + 1) * (0.075 * sin((h - 10) * pi / 180) + 1) +
+    0.0022344 * sin((h - 10) * pi / 180) +
+    0.03154
+  ) h);
   --md-ref-palette-primary6: oklch(from var(--color) 0.20 calc(c - (c / 100) * 70) h);
   --md-ref-palette-primary10: oklch(from var(--color) 0.24 calc(c - (c / 100) * 65) h);
   --md-ref-palette-primary12: oklch(from var(--color) 0.25 calc(c - (c / 100) * 60) h);
