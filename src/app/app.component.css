@@ -22,8 +22,8 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  color: color-contrast(var(--color) vs black, white);
-  background-color: var(--color);
+  color: color-contrast(var(--palette-base-color) vs black, white);
+  background-color: var(--palette-base-color);
 }
 
 .side-by-side-container
@@ -34,174 +34,31 @@
 /* 0, 4, 6, 10, 12, 17, 20, 22, 24, 30, 40, 50, 60, 70, 80, 87, 90, 92, 94, 95, 96, 98, 100 */
 .css-only
 {
-  --md-ref-palette-primary0: oklch(from var(--color) 0 0 h);
-  --md-ref-palette-primary4: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 4) +
-    5.99e-5 * c -
-    0.0012432 * (0.075 * sin((h - 10) * pi / 180) + 1) * (0.075 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.03154
-  ) h);
-  --md-ref-palette-primary6: oklch(from var(--color) 0 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 6) +
-    5.99e-5 * c -
-    0.0027972 * (0.05 * sin((h - 10) * pi / 180) + 1) * (0.05 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.046436
-  ) h);
-  --md-ref-palette-primary10: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 10) +
-    5.99e-5 * c -
-    0.00777 * (0.03 * sin((h - 10) * pi / 180) + 1) * (0.03 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.076228
-  ) h);
-  --md-ref-palette-primary12: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 12) +
-    5.99e-5 * c -
-    0.0111888 * (0.025 * sin((h - 10) * pi / 180) + 1) * (0.025 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.091124
-  ) h);
-  --md-ref-palette-primary17: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 17) +
-    5.99e-5 * c -
-    0.0224553 * (0.017647 * sin((h - 10) * pi / 180) + 1) * (0.017647 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.128364
-  ) h);
-  --md-ref-palette-primary20: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 20) +
-    5.99e-5 * c -
-    0.03108 * (0.015 * sin((h - 10) * pi / 180) + 1) * (0.015 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.150708
-  ) h);
-  --md-ref-palette-primary22: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 22) +
-    5.99e-5 * c -
-    0.0376068 * (0.013636 * sin((h - 10) * pi / 180) + 1) * (0.013636 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.165604
-  ) h);
-  --md-ref-palette-primary24: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 24) +
-    5.99e-5 * c -
-    0.0447552 * (0.0125 * sin((h - 10) * pi / 180) + 1) * (0.0125 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.1805
-  ) h);
-  --md-ref-palette-primary30: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 30) +
-    5.99e-5 * c -
-    0.06993 * (0.01 * sin((h - 10) * pi / 180) + 1) * (0.01 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.225188
-  ) h);
-  --md-ref-palette-primary40: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 40) +
-    5.99e-5 * c -
-    0.12432 * (0.0075 * sin((h - 10) * pi / 180) + 1) * (0.0075 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.299668
-  ) h);
-  --md-ref-palette-primary50: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 50) +
-    5.99e-5 * c -
-    0.19425 * (0.006 * sin((h - 10) * pi / 180) + 1) * (0.006 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.374148
-  ) h);
-  --md-ref-palette-primary60: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 60) +
-    5.99e-5 * c -
-    0.27972 * (0.005 * sin((h - 10) * pi / 180) + 1) * (0.005 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.448628
-  ) h);
-  --md-ref-palette-primary70: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 70) +
-    5.99e-5 * c -
-    0.38073 * (0.00428571428571429 * sin((h - 10) * pi / 180) + 1) * (0.00428571428571429 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.523108
-  ) h);
-  --md-ref-palette-primary80: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 80) +
-    5.99e-5 * c -
-    0.49728 * (0.00375 * sin((h - 10) * pi / 180) + 1) * (0.00375 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.597588
-  ) h);
-  --md-ref-palette-primary87: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 87) +
-    5.99e-5 * c -
-    0.5881113 * (0.00344827586206897 * sin((h - 10) * pi / 180) + 1) * (0.00344827586206897 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.649724
-  ) h);
-  --md-ref-palette-primary90: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 90) +
-    5.99e-5 * c -
-    0.62937 * (0.00333333333333333 * sin((h - 10) * pi / 180) + 1) * (0.00333333333333333 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.672068
-  ) h);
-  --md-ref-palette-primary92: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 92) +
-    5.99e-5 * c -
-    0.6576528 * (0.00326086956521739 * sin((h - 10) * pi / 180) + 1) * (0.00326086956521739 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.686964
-  ) h);
-  --md-ref-palette-primary94: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 94) +
-    5.99e-5 * c -
-    0.6865572 * (0.00319148936170213 * sin((h - 10) * pi / 180) + 1) * (0.00319148936170213 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.70186
-  ) h);
-  --md-ref-palette-primary95: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 95) +
-    5.99e-5 * c -
-    0.7012425 * (0.00315789473684211 * sin((h - 10) * pi / 180) + 1) * (0.00315789473684211 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.709308
-  ) h);
-  --md-ref-palette-primary96: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 96) +
-    5.99e-5 * c -
-    0.7160832 * (0.003125 * sin((h - 10) * pi / 180) + 1) * (0.003125 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.716756
-  ) h);
-  --md-ref-palette-primary98: oklch(from var(--color) 0.17 calc(
-    4.23e-5 * c * c -
-    4.02e-6 * c * (0.3 * sin((h - 10) * pi / 180) + 98) +
-    5.99e-5 * c -
-    0.7462308 * (0.00306122448979592 * sin((h - 10) * pi / 180) + 1) * (0.00306122448979592 * sin((h - 10) * pi / 180) + 1) +
-    0.0022344 * sin((h - 10) * pi / 180) +
-    0.731652
-  ) h);
-  --md-ref-palette-primary100: oklch(from var(--color) 1 0 h);
+  --theme-base-color: var(--color);
+  
+  --chroma-base: 0.05;
+  --palette-base-color: var(--theme-base-color);
+  --md-ref-palette-primary0: oklch(from var(--palette-base-color) 0 0 h);
+  --md-ref-palette-primary4: oklch(from var(--palette-base-color) 4% calc(var(--chroma-base) + (sin(0.036 * pi) * c)) h);
+  --md-ref-palette-primary6: oklch(from var(--palette-base-color) 6% calc(var(--chroma-base) + (sin(0.054 * pi) * c)) h);
+  --md-ref-palette-primary10: oklch(from var(--palette-base-color) 10% calc(var(--chroma-base) + (sin(0.09 * pi) * c)) h);
+  --md-ref-palette-primary12: oklch(from var(--palette-base-color) 12% calc(var(--chroma-base) + (sin(0.108 * pi) * c)) h);
+  --md-ref-palette-primary17: oklch(from var(--palette-base-color) 17% calc(var(--chroma-base) + (sin(0.153 * pi) * c)) h);
+  --md-ref-palette-primary20: oklch(from var(--palette-base-color) 20% calc(var(--chroma-base) + (sin(0.18 * pi) * c)) h);
+  --md-ref-palette-primary22: oklch(from var(--palette-base-color) 22% calc(var(--chroma-base) + (sin(0.198 * pi) * c)) h);
+  --md-ref-palette-primary24: oklch(from var(--palette-base-color) 24% calc(var(--chroma-base) + (sin(0.216 * pi) * c)) h);
+  --md-ref-palette-primary30: oklch(from var(--palette-base-color) 30% calc(var(--chroma-base) + (sin(0.27 * pi) * c)) h);
+  --md-ref-palette-primary40: oklch(from var(--palette-base-color) 40% calc(var(--chroma-base) + (sin(0.36 * pi) * c)) h);
+  --md-ref-palette-primary50: oklch(from var(--palette-base-color) 50% calc(var(--chroma-base) + (sin(0.45 * pi) * c)) h);
+  --md-ref-palette-primary60: oklch(from var(--palette-base-color) 60% calc(var(--chroma-base) + (sin(0.54 * pi) * c)) h);
+  --md-ref-palette-primary70: oklch(from var(--palette-base-color) 70% calc(var(--chroma-base) + (sin(0.63 * pi) * c)) h);
+  --md-ref-palette-primary80: oklch(from var(--palette-base-color) 80% calc(var(--chroma-base) + (sin(0.72 * pi) * c)) h);
+  --md-ref-palette-primary87: oklch(from var(--palette-base-color) 87% calc(var(--chroma-base) + (sin(0.783 * pi) * c)) h);
+  --md-ref-palette-primary90: oklch(from var(--palette-base-color) 90% calc(var(--chroma-base) + (sin(0.81 * pi) * c)) h);
+  --md-ref-palette-primary92: oklch(from var(--palette-base-color) 92% calc(var(--chroma-base) + (sin(0.828 * pi) * c)) h);
+  --md-ref-palette-primary94: oklch(from var(--palette-base-color) 94% calc(var(--chroma-base) + (sin(0.846 * pi) * c)) h);
+  --md-ref-palette-primary95: oklch(from var(--palette-base-color) 95% calc(var(--chroma-base) + (sin(0.855 * pi) * c)) h);
+  --md-ref-palette-primary96: oklch(from var(--palette-base-color) 96% calc(var(--chroma-base) + (sin(0.864 * pi) * c)) h);
+  --md-ref-palette-primary98: oklch(from var(--palette-base-color) 98% calc(var(--chroma-base) + (sin(0.882 * pi) * c)) h);
+  --md-ref-palette-primary100: oklch(from var(--palette-base-color) 1 0 h);
 }
