@@ -1,4 +1,4 @@
-import { Component, effect, signal, Signal, WritableSignal } from '@angular/core';
+import { Component, effect, signal, WritableSignal } from '@angular/core';
 import { setThemeFromHexColor } from 'm3-css-color-token-generator';
 
 type LchColor = `oklch(${number} ${number} ${number})`;
