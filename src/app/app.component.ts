@@ -48,18 +48,20 @@ export class AppComponent
     const schemePrimary = scheme.primary;
 
     console.log("primary from scheme " + contrast, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
-    console.log("primary40 from palette " + contrast, `rgb(${redFromArgb(primaryPalette.tone(40))}, ${greenFromArgb(primaryPalette.tone(40))}, ${blueFromArgb(primaryPalette.tone(40))})`);
 
-    const dynamicPrimary40 = DynamicColor.fromPalette({
-      palette: (s) => s.primaryPalette,
-      tone:
-          (s) => {
-            return s.isDark ? 80 : 40;
-          },
-    }).getArgb(scheme);
-    console.log("dynamic color primary40 from palette " + contrast, `rgb(${redFromArgb(dynamicPrimary40)}, ${greenFromArgb(dynamicPrimary40)}, ${blueFromArgb(dynamicPrimary40)})`);
+    if(contrast === 0)
+    {
+      console.log("primary40 from palette " + contrast, `rgb(${redFromArgb(primaryPalette.tone(40))}, ${greenFromArgb(primaryPalette.tone(40))}, ${blueFromArgb(primaryPalette.tone(40))})`);
+    }
+    else if(contrast === 0.5)
+    {
+      console.log("primary23 from palette " + contrast, `rgb(${redFromArgb(primaryPalette.tone(23))}, ${greenFromArgb(primaryPalette.tone(23))}, ${blueFromArgb(primaryPalette.tone(23))})`);
+    }
+    else if(contrast === 1)
+    {
+      console.log("primary18 from palette " + contrast, `rgb(${redFromArgb(primaryPalette.tone(18))}, ${greenFromArgb(primaryPalette.tone(18))}, ${blueFromArgb(primaryPalette.tone(18))})`);
+    }
     
-
     this.VALUES.forEach(value =>
     {
       const primaryValue = primaryPalette.tone(value);
