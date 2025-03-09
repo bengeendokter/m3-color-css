@@ -16,7 +16,7 @@
 
 .value
 {
-  width: 230px;
+  width: 237px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -35,8 +35,9 @@
 .css-only
 {
   --theme-base-color: var(--color, green);
+  --theme-base-color: oklch(from var(--color) l c h);
 
-  --chroma-factor: 2.3;
+  --chroma-factor: 2.2;
   --palette-base-color: var(--theme-base-color);
   --md-ref-palette-primary0:  oklch(from var(--palette-base-color) 0 0 h);
   --md-ref-palette-primary4:  oklch(from var(--palette-base-color) 17% calc((sin(0.009 * 04 * pi) * c / var(--chroma-factor))) h);
@@ -65,7 +66,7 @@
 
 .css-only[data-palette="secondary"]
 {
-  --chroma-factor: 2.3;
+  --chroma-factor: 2.2;
   --palette-base-color: oklch(from var(--theme-base-color) l calc(c / 3) h);
   --md-ref-palette-secondary0: oklch(from var(--palette-base-color) 0 0 h);
   --md-ref-palette-secondary4:  oklch(from var(--palette-base-color) 17% calc((sin(0.009 * 04 * pi) * c / var(--chroma-factor))) h);
@@ -95,7 +96,7 @@
 
 .css-only[data-palette="tertiary"]
 {
-  --chroma-factor: 2.3;
+  --chroma-factor: 2.2;
   --palette-base-color: oklch(from var(--theme-base-color) l calc(c / 2) calc(h + 60));
   --md-ref-palette-tertiary0: oklch(from var(--palette-base-color) 0 0 h);
   --md-ref-palette-tertiary4:  oklch(from var(--palette-base-color) 17% calc((sin(0.009 * 04 * pi) * c / var(--chroma-factor))) h);
@@ -124,7 +125,7 @@
 
 .css-only[data-palette="neutral"]
 {
-  --chroma-factor: 2.3;
+  --chroma-factor: 2.2;
   --palette-base-color: oklch(from var(--theme-base-color) l min(calc(c / 12), 0.01) h);
   --md-ref-palette-neutral0: oklch(from var(--palette-base-color) 0 0 h);
   --md-ref-palette-neutral4:  oklch(from var(--palette-base-color) 17% calc((sin(0.009 * 04 * pi) * c / var(--chroma-factor))) h);
@@ -153,7 +154,7 @@
 
 .css-only[data-palette="neutral-variant"]
 {
-  --chroma-factor: 2.3;
+  --chroma-factor: 2.2;
   --palette-base-color: oklch(from var(--theme-base-color) l min(calc(c / 6), 0.02) h);
   --md-ref-palette-neutral-variant0: oklch(from var(--palette-base-color) 0 0 h);
   --md-ref-palette-neutral-variant4:  oklch(from var(--palette-base-color) 17% calc((sin(0.009 * 04 * pi) * c / var(--chroma-factor))) h);
@@ -182,7 +183,7 @@
 
 .css-only[data-palette="error"]
 {
-  --chroma-factor: 2.3;
+  --chroma-factor: 1;
   --palette-base-color: oklch(from var(--theme-base-color) l 0.20 25);
   --md-ref-palette-error0: oklch(from var(--palette-base-color) 0 0 h);
   --md-ref-palette-error4:  oklch(from var(--palette-base-color) 17% calc((sin(0.009 * 04 * pi) * c / var(--chroma-factor))) h);
