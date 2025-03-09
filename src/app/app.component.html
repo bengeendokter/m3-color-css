@@ -7,12 +7,10 @@
   <div class="palette">
     @for(value of VALUES; track $index) {
       <div class="side-by-side-container">
-        <div [id]="palette + value" class="value" [style.--color]="'oklch(from var(--md-ref-palette-' + palette + value + ') l c h)'">{{value}}</div>
-        <div [style.--color]="hexThemeColor()" [style.backgroundColor]="'var(--md-ref-palette-' + palette + value + ')'" class="value css-only" [attr.data-palette]="palette"></div>
+        <div [id]="palette + value + 1" class="value" [style.--color]="'oklch(from var(--md-ref-palette-' + palette + value + ') l c h)'">{{value}}</div>
+        <div [id]="palette + value + 2" [style.--color]="hexThemeColor()" [style.backgroundColor]="'var(--md-ref-palette-' + palette + value + ')'" class="value css-only" [attr.data-palette]="palette" [style.color]="'color-contrast(var(--md-ref-palette-' + palette + value + ') vs black, white)'"></div>
         @if(palette === 'primary') {
-          <div class="value" [style.backgroundColor]="'var(--' + palette + value + ')'"></div>
-          <div class="value" [style.backgroundColor]="'var(--' + palette + value + '-medium-contrast)'"></div>
-          <div class="value" [style.backgroundColor]="'var(--' + palette + value + '-high-contrast)'"></div>
+          <div [id]="palette + value + 3" class="value" [style.backgroundColor]="'oklch(from ' + 'var(--' + palette + value + ')' + ' l c h)' " [style.color]="'color-contrast(var(--' + palette + value + ') vs black, white)'"></div>
         }
       </div>
     }

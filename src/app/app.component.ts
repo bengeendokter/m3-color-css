@@ -26,8 +26,8 @@ export class AppComponent
     effect(() => {
       setThemeFromHexColor(this.hexThemeColor());
       this.getSchemeColorUtils(0);
-      this.getSchemeColorUtils(0.5);
-      this.getSchemeColorUtils(1);
+      // this.getSchemeColorUtils(0.5);
+      // this.getSchemeColorUtils(1);
 
       this.setPaletteInnerHtml();
 
@@ -131,35 +131,37 @@ export class AppComponent
 
   private setPaletteInnerHtml()
   {
-    this.PALETTES.forEach(palette =>
-    {
-      this.VALUES.forEach(value =>
-      {
-        const element = document.querySelector(`#${palette}${value}`);
-
-        if(!element)
+    [1, 2, 3].forEach((paletteType) => {
+      this.PALETTES.forEach(palette =>
         {
-          console.warn(`Element with id ${palette}${value} not found!`);
-          return;
-        }
-
-        const compStyles = window.getComputedStyle(element);
-        const lchColor = compStyles.backgroundColor;
-
-        if(!this.isLchColor(lchColor))
-        {
-          console.warn(`Element with id ${palette}${value} has no LCH color!`);
-          return;
-        }
-
-        // get the L C and H values
-        const [l, c, h] = lchColor.match(/\d+(\.\d+)?/g)!.map(Number);
-
-        // round the values to 2 decimal places
-        const lchFixedDecimals = `${value.toString().padStart(2, '0')} L:${l.toFixed(2).padStart(5, '0')} C:${c.toFixed(2).padStart(5, '0')} H:${h.toFixed(2).padStart(5, '0')}`;
-
-        element.innerHTML = lchFixedDecimals;
-      });
+          this.VALUES.forEach(value =>
+          {
+            const element = document.querySelector(`#${palette}${value}${paletteType}`);
+    
+            if(!element)
+            {
+              console.warn(`Element with id ${palette}${value} not found!`);
+              return;
+            }
+    
+            const compStyles = window.getComputedStyle(element);
+            const lchColor = compStyles.backgroundColor;
+    
+            if(!this.isLchColor(lchColor))
+            {
+              console.warn(`Element with id ${palette}${value} has no LCH color!`);
+              return;
+            }
+    
+            // get the L C and H values
+            const [l, c, h] = lchColor.match(/\d+(\.\d+)?/g)!.map(Number);
+    
+            // round the values to 2 decimal places
+            const lchFixedDecimals = `${value.toString().padStart(2, '0')} L:${l.toFixed(2).padStart(5, '0')} C:${c.toFixed(2).padStart(5, '0')} H:${h.toFixed(2).padStart(5, '0')}`;
+    
+            element.innerHTML = lchFixedDecimals;
+          });
+        });
     });
   }
 }
