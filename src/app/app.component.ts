@@ -20,11 +20,11 @@ export class AppComponent
   constructor()
   {
 
-    setThemeFromHexColor(this.hexThemeColor());
+    // setThemeFromHexColor(this.hexThemeColor());
     document.documentElement.classList.add('light');
 
     effect(() => {
-      setThemeFromHexColor(this.hexThemeColor());
+      // setThemeFromHexColor(this.hexThemeColor());
       this.getSchemeColorUtils(0);
       // this.getSchemeColorUtils(0.5);
       // this.getSchemeColorUtils(1);
@@ -65,20 +65,22 @@ export class AppComponent
     this.VALUES.forEach(value =>
     {
       const primaryValue = primaryPalette.tone(value);
+      document.documentElement.style.setProperty(`--md-ref-palette-primary${value}`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
 
-      if(contrast === 0)
-      {
-        document.documentElement.style.setProperty(`--primary${value}`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
-        return;
-      }
+      const secondaryValue = scheme.secondaryPalette.tone(value);
+      document.documentElement.style.setProperty(`--md-ref-palette-secondary${value}`, `rgb(${redFromArgb(secondaryValue)}, ${greenFromArgb(secondaryValue)}, ${blueFromArgb(secondaryValue)})`);
 
-      if(contrast === 0.5)
-      {
-        document.documentElement.style.setProperty(`--primary${value}-medium-contrast`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
-        return;
-      }
+      const tertiaryValue = scheme.tertiaryPalette.tone(value);
+      document.documentElement.style.setProperty(`--md-ref-palette-tertiary${value}`, `rgb(${redFromArgb(tertiaryValue)}, ${greenFromArgb(tertiaryValue)}, ${blueFromArgb(tertiaryValue)})`);
 
-      document.documentElement.style.setProperty(`--primary${value}-high-contrast`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
+      const neutralValue = scheme.neutralPalette.tone(value);
+      document.documentElement.style.setProperty(`--md-ref-palette-neutral${value}`, `rgb(${redFromArgb(neutralValue)}, ${greenFromArgb(neutralValue)}, ${blueFromArgb(neutralValue)})`);
+
+      const neutralVariantValue = scheme.neutralVariantPalette.tone(value);
+      document.documentElement.style.setProperty(`--md-ref-palette-neutral-variant${value}`, `rgb(${redFromArgb(neutralVariantValue)}, ${greenFromArgb(neutralVariantValue)}, ${blueFromArgb(neutralVariantValue)})`);
+
+      const errorValue = scheme.errorPalette.tone(value);
+      document.documentElement.style.setProperty(`--md-ref-palette-error${value}`, `rgb(${redFromArgb(errorValue)}, ${greenFromArgb(errorValue)}, ${blueFromArgb(errorValue)})`);
     });
   }
 
