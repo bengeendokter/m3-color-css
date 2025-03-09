@@ -18,10 +18,11 @@
     "@angular/platform-browser": "^17.1.0",
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
+    "@material/material-color-utilities": "^0.3.0",
+    "m3-css-color-token-generator": "github:bengeendokter/m3-css-color-token-generator",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.3",
-    "m3-css-color-token-generator": "github:bengeendokter/m3-css-color-token-generator"
+    "zone.js": "~0.14.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.1.2",

@@ -1,4 +1,5 @@
 import { Component, effect, signal, WritableSignal } from '@angular/core';
+import { argbFromHex, blueFromArgb, DynamicColor, greenFromArgb, Hct, MaterialDynamicColors, redFromArgb, SchemeTonalSpot } from '@material/material-color-utilities';
 import { setThemeFromHexColor } from 'm3-css-color-token-generator';
 
 type LchColor = `oklch(${number} ${number} ${number})`;
@@ -18,17 +19,64 @@ export class AppComponent
 
   constructor()
   {
+
     setThemeFromHexColor(this.hexThemeColor());
     document.documentElement.classList.add('light');
 
     effect(() => {
       setThemeFromHexColor(this.hexThemeColor());
+      this.getSchemeColorUtils(0);
+      this.getSchemeColorUtils(0.5);
+      this.getSchemeColorUtils(1);
 
       this.setPaletteInnerHtml();
 
       setTimeout(() => {
         this.updateThemeColorLabel();
       }, 100);
+    });
+
+
+  }
+
+  private getSchemeColorUtils(contrast: 0 | 0.5 | 1 = 0)
+  {
+    const htc = Hct.fromInt(argbFromHex(this.hexThemeColor()));
+    const scheme = new SchemeTonalSpot(htc, false, contrast);
+    console.log('scheme ' + contrast, scheme);
+    const primaryPalette = scheme.primaryPalette;
+    const schemePrimary = scheme.primary;
+
+    console.log("primary from scheme " + contrast, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
+    console.log("primary40 from palette " + contrast, `rgb(${redFromArgb(primaryPalette.tone(40))}, ${greenFromArgb(primaryPalette.tone(40))}, ${blueFromArgb(primaryPalette.tone(40))})`);
+
+    const dynamicPrimary40 = DynamicColor.fromPalette({
+      palette: (s) => s.primaryPalette,
+      tone:
+          (s) => {
+            return s.isDark ? 80 : 40;
+          },
+    }).getArgb(scheme);
+    console.log("dynamic color primary40 from palette " + contrast, `rgb(${redFromArgb(dynamicPrimary40)}, ${greenFromArgb(dynamicPrimary40)}, ${blueFromArgb(dynamicPrimary40)})`);
+    
+
+    this.VALUES.forEach(value =>
+    {
+      const primaryValue = primaryPalette.tone(value);
+
+      if(contrast === 0)
+      {
+        document.documentElement.style.setProperty(`--primary${value}`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
+        return;
+      }
+
+      if(contrast === 0.5)
+      {
+        document.documentElement.style.setProperty(`--primary${value}-medium-contrast`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
+        return;
+      }
+
+      document.documentElement.style.setProperty(`--primary${value}-high-contrast`, `rgb(${redFromArgb(primaryValue)}, ${greenFromArgb(primaryValue)}, ${blueFromArgb(primaryValue)})`);
     });
   }
 

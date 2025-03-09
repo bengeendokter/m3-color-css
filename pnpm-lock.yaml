@@ -32,6 +32,9 @@ importers:
       '@angular/router':
         specifier: ^17.1.0
         version: 17.3.12(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10))(@angular/platform-browser@17.3.12(@angular/animations@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@17.3.12(rxjs@7.8.1)(zone.js@0.14.10)))(rxjs@7.8.1)
+      '@material/material-color-utilities':
+        specifier: ^0.3.0
+        version: 0.3.0
       m3-css-color-token-generator:
         specifier: github:bengeendokter/m3-css-color-token-generator
         version: https://codeload.github.com/bengeendokter/m3-css-color-token-generator/tar.gz/788d871a7db0d7127487daee4065f19e6a543313
