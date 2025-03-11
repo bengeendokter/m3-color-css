@@ -15,7 +15,8 @@ export class AppComponent
 {
   public hexThemeColor: WritableSignal<string> =  signal('#ff0000');
   public PALETTES = ['primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant', 'error'] as const;
-  public VALUES = [0, 4, 6, 10, 12, 17, 20, 22, 24, 30, 40, 50, 60, 70, 80, 87, 90, 92, 94, 95, 96, 98, 100] as const;
+  // array of numbers from 0 to 100
+  public VALUES = Array.from({ length: 101 }, (_, i) => i);
 
   constructor()
   {
@@ -25,9 +26,9 @@ export class AppComponent
 
     effect(() => {
       // setThemeFromHexColor(this.hexThemeColor());
-      this.getSchemeColorUtils(0);
+      // this.getSchemeColorUtils(0);
       // this.getSchemeColorUtils(0.5);
-      // this.getSchemeColorUtils(1);
+      this.getSchemeColorUtils(1);
 
       this.setPaletteInnerHtml();
 
@@ -45,7 +46,7 @@ export class AppComponent
     const scheme = new SchemeTonalSpot(htc, false, contrast);
     console.log('scheme ' + contrast, scheme);
     const primaryPalette = scheme.primaryPalette;
-    const schemePrimary = scheme.primary;
+    const schemePrimary = scheme.surfaceContainerHighest;
     document.documentElement.style.setProperty(`--color-to-find`, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
 
 
