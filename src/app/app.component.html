@@ -7,6 +7,7 @@
   <div class="palette">
     @for(value of VALUES; track $index) {
       <div class="side-by-side-container">
+        <div [style.backgroundColor]="'var(--color-to-find)'" class="value"></div>
         <div [id]="palette + value + 1" class="value" [style.--color]="'oklch(from var(--md-ref-palette-' + palette + value + ') l c h)'">{{value}}</div>
         <div [id]="palette + value + 2" [style.--color]="hexThemeColor()" [style.backgroundColor]="'var(--md-ref-palette-' + palette + value + ')'" class="value css-only" [attr.data-palette]="palette" [style.color]="'color-contrast(var(--md-ref-palette-' + palette + value + ') vs black, white)'"></div>
       </div>

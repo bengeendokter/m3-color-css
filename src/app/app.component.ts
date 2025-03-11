@@ -46,6 +46,8 @@ export class AppComponent
     console.log('scheme ' + contrast, scheme);
     const primaryPalette = scheme.primaryPalette;
     const schemePrimary = scheme.primary;
+    document.documentElement.style.setProperty(`--color-to-find`, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
+
 
     console.log("primary from scheme " + contrast, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
 
@@ -61,7 +63,7 @@ export class AppComponent
     {
       console.log("primary18 from palette " + contrast, `rgb(${redFromArgb(primaryPalette.tone(18))}, ${greenFromArgb(primaryPalette.tone(18))}, ${blueFromArgb(primaryPalette.tone(18))})`);
     }
-    
+
     this.VALUES.forEach(value =>
     {
       const primaryValue = primaryPalette.tone(value);
@@ -139,28 +141,28 @@ export class AppComponent
           this.VALUES.forEach(value =>
           {
             const element = document.querySelector(`#${palette}${value}${paletteType}`);
-    
+
             if(!element)
             {
               console.warn(`Element with id ${palette}${value} not found!`);
               return;
             }
-    
+
             const compStyles = window.getComputedStyle(element);
             const lchColor = compStyles.backgroundColor;
-    
+
             if(!this.isLchColor(lchColor))
             {
               console.warn(`Element with id ${palette}${value} has no LCH color!`);
               return;
             }
-    
+
             // get the L C and H values
             const [l, c, h] = lchColor.match(/\d+(\.\d+)?/g)!.map(Number);
-    
+
             // round the values to 2 decimal places
             const lchFixedDecimals = `${value.toString().padStart(2, '0')} L:${l.toFixed(2).padStart(5, '0')} C:${c.toFixed(2).padStart(5, '0')} H:${h.toFixed(2).padStart(5, '0')}`;
-    
+
             element.innerHTML = lchFixedDecimals;
           });
         });
