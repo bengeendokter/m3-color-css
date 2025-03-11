@@ -46,7 +46,7 @@ export class AppComponent
     const scheme = new SchemeTonalSpot(htc, true, contrast);
     console.log('scheme ' + contrast, scheme);
     const primaryPalette = scheme.primaryPalette;
-    const schemePrimary = scheme.primary;
+    const schemePrimary = scheme.surfaceContainerHighest;
     document.documentElement.style.setProperty(`--color-to-find`, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
 
 
