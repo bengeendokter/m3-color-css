@@ -27,8 +27,8 @@ export class AppComponent
     effect(() => {
       // setThemeFromHexColor(this.hexThemeColor());
       // this.getSchemeColorUtils(0);
-      // this.getSchemeColorUtils(0.5);
-      this.getSchemeColorUtils(1);
+      this.getSchemeColorUtils(0.5);
+      // this.getSchemeColorUtils(1);
 
       this.setPaletteInnerHtml();
 
@@ -43,7 +43,7 @@ export class AppComponent
   private getSchemeColorUtils(contrast: 0 | 0.5 | 1 = 0)
   {
     const htc = Hct.fromInt(argbFromHex(this.hexThemeColor()));
-    const scheme = new SchemeTonalSpot(htc, true, contrast);
+    const scheme = new SchemeTonalSpot(htc, false, contrast);
     console.log('scheme ' + contrast, scheme);
     const primaryPalette = scheme.primaryPalette;
     const schemePrimary = scheme.surfaceContainerHighest;
