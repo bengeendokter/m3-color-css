@@ -43,10 +43,10 @@ export class AppComponent
   private getSchemeColorUtils(contrast: 0 | 0.5 | 1 = 0)
   {
     const htc = Hct.fromInt(argbFromHex(this.hexThemeColor()));
-    const scheme = new SchemeTonalSpot(htc, false, contrast);
+    const scheme = new SchemeTonalSpot(htc, true, contrast);
     console.log('scheme ' + contrast, scheme);
     const primaryPalette = scheme.primaryPalette;
-    const schemePrimary = scheme.surfaceContainerHighest;
+    const schemePrimary = scheme.primary;
     document.documentElement.style.setProperty(`--color-to-find`, `rgb(${redFromArgb(schemePrimary)}, ${greenFromArgb(schemePrimary)}, ${blueFromArgb(schemePrimary)})`);
 
 
