@@ -16,7 +16,7 @@ export class AppComponent
   public hexThemeColor: WritableSignal<string> =  signal('#ff0000');
   public PALETTES = ['primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant', 'error'] as const;
   // array of numbers from 0 to 100
-  public VALUES = Array.from({ length: 101 }, (_, i) => i);
+  public VALUES = [0, 2, 3, 4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 29, 30, 31, 34, 35, 36, 40, 46, 50, 60, 70, 72, 75, 79, 80, 84, 85, 87, 88, 90, 92, 94, 95, 96, 98, 100] as const;
 
   constructor()
   {
