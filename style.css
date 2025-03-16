@@ -1,0 +1,288 @@
+*
+{
+    box-sizing: border-box;
+}
+
+:root {
+    accent-color: var(--md-sys-color-primary);
+
+    &:where(.light, .light-medium-contrast, .light-high-contrast) {
+        color-scheme: light;
+    }
+
+    &:where(.dark, .dark-medium-contrast, .dark-high-contrast) {
+        color-scheme: dark;
+    }
+}
+
+html
+{
+    height: 100%;
+}
+
+body
+{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+    padding: 8px;
+}
+
+.buttons-container
+{
+    display: flex;
+    justify-content: space-around;
+    padding-block: 8px;
+}
+
+.token-preview
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4fr 2fr 2fr 1fr;
+}
+
+.token-group
+{
+    display: grid;
+
+    div
+    {
+        padding: 0.5em;
+    }
+}
+
+.primary
+{
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+.on-primary
+{
+    background-color: var(--md-sys-color-on-primary);
+    color: var(--md-sys-color-primary);
+}
+
+.primary-container
+{
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.on-primary-container
+{
+    background-color: var(--md-sys-color-on-primary-container);
+    color: var(--md-sys-color-primary-container);
+}
+
+.secondary
+{
+    background-color: var(--md-sys-color-secondary);
+    color: var(--md-sys-color-on-secondary);
+}
+
+.on-secondary
+{
+    background-color: var(--md-sys-color-on-secondary);
+    color: var(--md-sys-color-secondary);
+}
+
+.secondary-container
+{
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
+.on-secondary-container
+{
+    background-color: var(--md-sys-color-on-secondary-container);
+    color: var(--md-sys-color-secondary-container);
+}
+
+.tertiary
+{
+    background-color: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-on-tertiary);
+}
+
+.on-tertiary
+{
+    background-color: var(--md-sys-color-on-tertiary);
+    color: var(--md-sys-color-tertiary);
+}
+
+.tertiary-container
+{
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+}
+
+.on-tertiary-container
+{
+    background-color: var(--md-sys-color-on-tertiary-container);
+    color: var(--md-sys-color-tertiary-container);
+}
+
+.error
+{
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+}
+
+.on-error
+{
+    background-color: var(--md-sys-color-on-error);
+    color: var(--md-sys-color-error);
+}
+
+.error-container
+{
+    background-color: var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+}
+
+.on-error-container
+{
+    background-color: var(--md-sys-color-on-error-container);
+    color: var(--md-sys-color-error-container);
+}
+
+.group-surface-tokens
+{
+    grid-column: span 3;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.surface-dim
+{
+    background-color: var(--md-sys-color-surface-dim);
+    color: var(--md-sys-color-on-surface);
+}
+
+.surface
+{
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+}
+
+.surface-bright
+{
+    background-color: var(--md-sys-color-surface-bright);
+    color: var(--md-sys-color-on-surface);
+}
+
+.group-surface-container-tokens
+{
+    grid-column: span 3;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.surface-container-lowest
+{
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface-container);
+}
+
+.surface-container-low
+{
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface-container);
+}
+
+.surface-container
+{
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-container);
+}
+
+.surface-container-high
+{
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-container);
+}
+
+.surface-container-highest
+{
+    background-color: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface-container);
+}
+
+.group-other-tokens
+{
+    grid-column: span 3;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.on-surface
+{
+    background-color: var(--md-sys-color-on-surface);
+    color: var(--md-sys-color-surface);
+}
+
+.on-surface-variant
+{
+    background-color: var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-surface);
+}
+
+.outline
+{
+    background-color: var(--md-sys-color-outline);
+    color: var(--md-sys-color-surface);
+}
+
+.outline-variant
+{
+    background-color: var(--md-sys-color-outline-variant);
+    color: var(--md-sys-color-on-surface);
+}
+
+.group-inverse-tokens
+{
+    grid-row: 2 / span 2;
+    grid-column: 4;
+}
+
+.inverse-surface
+{
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+}
+
+.inverse-on-surface
+{
+    background-color: var(--md-sys-color-inverse-on-surface);
+    color: var(--md-sys-color-inverse-surface);
+}
+
+.inverse-primary
+{
+    background-color: var(--md-sys-color-inverse-primary);
+    color: var(--md-sys-color-inverse-surface);
+}
+
+.group-shadow-tokens
+{
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.scrim
+{
+    background-color: var(--md-sys-color-scrim);
+    color: white;
+}
+
+.shadow
+{
+    background-color: var(--md-sys-color-shadow);
+    color: white;
+}

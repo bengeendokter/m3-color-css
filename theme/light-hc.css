@@ -21,8 +21,8 @@
   --md-sys-color-on-surface-variant: var(--md-ref-palette-neutral-variant0);
   --md-sys-color-outline: var(--md-ref-palette-neutral-variant18);
   --md-sys-color-outline-variant: var(--md-ref-palette-neutral-variant31);
-  --md-sys-color-shadow: var(--md-ref-palette-neutral100);
-  --md-sys-color-scrim: var(--md-ref-palette-neutral100);
+  --md-sys-color-shadow: var(--md-ref-palette-neutral0);
+  --md-sys-color-scrim: var(--md-ref-palette-neutral0);
   --md-sys-color-inverse-surface: var(--md-ref-palette-neutral20);
   --md-sys-color-inverse-on-surface: var(--md-ref-palette-neutral100);
   --md-sys-color-inverse-primary: var(--md-ref-palette-primary80);
