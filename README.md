@@ -1,5 +1,7 @@
 # Material Design 3 colors implemented in plain CSS using the relative color syntax.
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5294323-31f4-44ae-8390-b6a6b7f8ec11/deploy-status)](https://app.netlify.com/sites/m3-color-css/deploys)
+## Demo
+A demo is available on https://m3-color-css.bengeendokter.be/
 ## Install
 ### Install latest version
 ```bash
