@@ -2,27 +2,27 @@
 ## Install
 ### Install latest version
 ```bash
-pnpm add github:bengeendokter/m3-css-color-token-generator
+pnpm add github:bengeendokter/m3-color-css
 ```
 ### Install specific version
 ```bash
-pnpm add github:bengeendokter/m3-css-color-token-generator#v0.1.1
+pnpm add github:bengeendokter/m3-color-css#v0.1.3
 ```
 ## Get light/dark/contrast themes CSS
 ```CSS
 /* styles.css */
-@import "m3-css-color-token-generator/theme/palette";
-@import "m3-css-color-token-generator/theme/light";
-@import "m3-css-color-token-generator/theme/dark";
-@import "m3-css-color-token-generator/theme/light-mc";
-@import "m3-css-color-token-generator/theme/dark-mc";
-@import "m3-css-color-token-generator/theme/light-hc";
-@import "m3-css-color-token-generator/theme/dark-hc";
+@import "m3-color-css/theme/palette";
+@import "m3-color-css/theme/light";
+@import "m3-color-css/theme/dark";
+@import "m3-color-css/theme/light-mc";
+@import "m3-color-css/theme/dark-mc";
+@import "m3-color-css/theme/light-hc";
+@import "m3-color-css/theme/dark-hc";
 ```
 ## Use helper functions
 ```TypeScript
 // main.ts
-import {setTheme, handleLightThemeButtonPressed, enableSystemContrastPreferenceListener, enableSystemColorSchemePreferenceListener} from 'm3-css-color-token-generator';
+import {setTheme, handleLightThemeButtonPressed, enableSystemContrastPreferenceListener, enableSystemColorSchemePreferenceListener} from 'm3-color-css';
 
 setTheme();
 enableSystemContrastPreferenceListener();
