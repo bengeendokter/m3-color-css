@@ -1,7 +1,7 @@
 {
   "name": "m3-color-css",
   "private": true,
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Material Design 3 colors implemented in plain CSS using the relative color syntax.",
   "module": "dist/theme.mjs",
   "types": "dist/theme.d.mts",

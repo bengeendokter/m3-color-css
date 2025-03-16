@@ -6,7 +6,7 @@ pnpm add github:bengeendokter/m3-color-css
 ```
 ### Install specific version
 ```bash
-pnpm add github:bengeendokter/m3-color-css#v0.1.3
+pnpm add github:bengeendokter/m3-color-css#v0.1.4
 ```
 ## Get light/dark/contrast themes CSS
 ```CSS
