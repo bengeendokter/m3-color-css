@@ -9,8 +9,8 @@ function isColorScheme(value) {
 }
 var CONTRAST = {
   STANDARD: "standard",
-  MEDIUM_CONTRAST: "mc",
-  HIGH_CONTRAST: "hc"
+  MEDIUM_CONTRAST: "medium-contrast",
+  HIGH_CONTRAST: "high-contrast"
 };
 function isContrast(value) {
   const contrastValues = Object.values(CONTRAST);
@@ -62,7 +62,8 @@ function setMetaThemeColor(color) {
   }
   metaTag.setAttribute("content", color);
 }
-function setTheme({ colorScheme, contrast, updateMetaThemeColor = true }) {
+function setTheme(params = { updateMetaThemeColor: true }) {
+  const { colorScheme, contrast, updateMetaThemeColor } = params;
   Object.values(THEME_CLASS).forEach((themeClass2) => {
     document.documentElement.classList.remove(themeClass2);
   });
@@ -111,9 +112,9 @@ function setOsContrastPreference() {
   localStorage.setItem(LOCAL_STORAGE.CONTRAST, OS_PREFERENCE);
 }
 function getColorSchemePreference() {
-  const storedPreferenceColorScheme = localStorage.getItem(LOCAL_STORAGE.COLOR_SCHEME) ?? OS_PREFERENCE;
+  const storedPreferenceColorScheme = getLocalStorageColorScheme();
   const osColorScheme = window.matchMedia(MEDIA_QUERY.PREFERS_COLOR_SCHEME_DARK).matches ? COLOR_SCHEME.DARK : COLOR_SCHEME.LIGHT;
-  if (!isColorScheme(storedPreferenceColorScheme)) {
+  if (storedPreferenceColorScheme === OS_PREFERENCE) {
     return osColorScheme;
   }
   return storedPreferenceColorScheme;
@@ -136,9 +137,9 @@ function enableSystemColorSchemePreferenceListener() {
   });
 }
 function getContrastPreference() {
-  const storedPreferenceContrast = localStorage.getItem(LOCAL_STORAGE.CONTRAST) ?? OS_PREFERENCE;
+  const storedPreferenceContrast = getLocalStorageContrast();
   const osContrast = window.matchMedia(MEDIA_QUERY.PREFERS_CONTRAST_MORE).matches ? CONTRAST.HIGH_CONTRAST : CONTRAST.STANDARD;
-  if (!isContrast(storedPreferenceContrast)) {
+  if (storedPreferenceContrast === OS_PREFERENCE) {
     return osContrast;
   }
   return storedPreferenceContrast;
@@ -160,6 +161,48 @@ function enableSystemContrastPreferenceListener() {
     }
   });
 }
+function handleDarkThemeButtonPressed(updateMetaThemeColor = true) {
+  setDarkThemePreference();
+  setDarkTheme(updateMetaThemeColor);
+}
+function handleLightThemeButtonPressed(updateMetaThemeColor = true) {
+  setLightThemePreference();
+  setLightTheme(updateMetaThemeColor);
+}
+function handleOsColorSchemeButtonPressed(updateMetaThemeColor = true) {
+  setOsColorSchemePreference();
+  setTheme({ updateMetaThemeColor });
+}
+function handleStandardContrastButtonPressed(updateMetaThemeColor = true) {
+  setStandardContrastThemePreference();
+  setStandardContrastTheme(updateMetaThemeColor);
+}
+function handleMediumContrastButtonPressed(updateMetaThemeColor = true) {
+  setMediumContrastThemePreference();
+  setMediumContrastTheme(updateMetaThemeColor);
+}
+function handleHighContrastButtonPressed(updateMetaThemeColor = true) {
+  setHighContrastThemePreference();
+  setHighContrastTheme(updateMetaThemeColor);
+}
+function handleOsContrastButtonPressed(updateMetaThemeColor = true) {
+  setOsContrastPreference();
+  setTheme({ updateMetaThemeColor });
+}
+function getLocalStorageColorScheme() {
+  const storedPreferenceColorScheme = localStorage.getItem(LOCAL_STORAGE.COLOR_SCHEME) ?? OS_PREFERENCE;
+  if (!isColorScheme(storedPreferenceColorScheme)) {
+    return OS_PREFERENCE;
+  }
+  return storedPreferenceColorScheme;
+}
+function getLocalStorageContrast() {
+  const storedPreferenceContrast = localStorage.getItem(LOCAL_STORAGE.CONTRAST) ?? OS_PREFERENCE;
+  if (!isContrast(storedPreferenceContrast)) {
+    return OS_PREFERENCE;
+  }
+  return storedPreferenceContrast;
+}
 export {
   COLOR_SCHEME,
   CONTRAST,
@@ -169,6 +212,15 @@ export {
   enableSystemContrastPreferenceListener,
   getColorSchemePreference,
   getContrastPreference,
+  getLocalStorageColorScheme,
+  getLocalStorageContrast,
+  handleDarkThemeButtonPressed,
+  handleHighContrastButtonPressed,
+  handleLightThemeButtonPressed,
+  handleMediumContrastButtonPressed,
+  handleOsColorSchemeButtonPressed,
+  handleOsContrastButtonPressed,
+  handleStandardContrastButtonPressed,
   isColorScheme,
   isContrast,
   setDarkTheme,
