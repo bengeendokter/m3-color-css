@@ -1,4 +1,4 @@
-# Material Design 3 CSS custom properties color token generator
+# Material Design 3 colors implemented in plain CSS using the relative color syntax.
 ## Install
 ### Install latest version
 ```bash
@@ -32,3 +32,5 @@ lightButton.addEventListener("click", () => {
     handleLightThemeButtonPressed();
 });
 ```
+## Older versions
+Verions 1.2 and prior can be found on https://github.com/bengeendokter/m3-css-color-token-generator
